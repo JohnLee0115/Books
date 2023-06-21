@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Authors Page</title>
+</head>
+
+<body>
+    
+    <div class="left">
+        <h2>New Author</h2>
+            <form action="/create_author" method="POST">
+                <div>
+                    <label for="name">Name : </label>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+    </div>
+
+    <div class="right">
+
+        <h2>All Authors</h2>
+        <div class="container">
+            {% for author in  all_authors%}
+            <div>
+                <a href="/authors/{{author.id}}">{{author.name}}</a>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/books">Add Book</a>
+
+    </div>
+
+</body>
+
+</html>
